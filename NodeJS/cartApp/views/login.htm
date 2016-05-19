@@ -1,0 +1,23 @@
+<form name="login" novalidate>
+    <fieldset>
+        <legend>Login</legend>
+        <label for="userName">User Name : </label>
+        <input type="text" name="username" id="userName" ng-required="true"
+               ng-model="username"
+               placeholder="Enter Your Username">
+        <span ng-show="login.username.$invalid && login.username.$dirty">
+        <span ng-show="login.username.$error.required">User Name is required.</span>
+        </span>
+        <label for="pwd">Password :</label>
+        <input type="password" name="password" id="pwd" ng-required="true"
+               ng-model="password"
+               placeholder="Enter Yor Password">
+        <span ng-show="login.password.$invalid && login.password.$dirty">
+        <span ng-show="login.password.$error.required">Password is required.</span>
+        </span>
+        <button ng-click="validateLogin()" ng-disabled="login.username.$dirty &&
+                    login.username.$invalid || login.password.$dirty &&
+                        login.password.$invalid">Login
+        </button>
+    </fieldset>
+</form>

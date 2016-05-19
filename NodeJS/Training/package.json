@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.10.6",
+    "mysql": "^2.5.4",
+    "ejs": "^1.0.0",
+    "express-session": "^1.7.6"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.2.0"
+  }
+}

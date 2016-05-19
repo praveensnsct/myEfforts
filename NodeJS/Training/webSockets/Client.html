@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket;
+        function submitData() {
+            var d = document.getElementById('inputData').value;
+            socket.emit('submit', d);
+        }
+
+        function OnLoad() {
+            socket = io.connect();
+            socket.on('message', function (data) {
+                document.getElementById('msgs').innerHTML = data;
+            });
+        }
+    </script>
+</head>
+<body onload="OnLoad()">
+<h1>Socket Programming</h1>
+
+<form action="#">
+    <p>
+        Data : <input type="text" id="inputData"/>
+        <input type="button" onclick="submitData()" value="Submit"/>
+    </p>
+</form>
+<p>Msgs from Server : <span id="msgs"></span></p>
+</body>
+</html>
