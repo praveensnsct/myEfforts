@@ -1,1 +1,0 @@
-insert into user values('admin','admin','email@email.com','0000000000','question','answer','test')
